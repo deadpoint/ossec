@@ -1,0 +1,39 @@
+  <global>
+<% if @email_notification -%>
+    <email_notification><%= @email_notification %></email_notification>
+<% end -%>
+<% if @email_to -%>
+    <email_to><%= @email_to %></email_to>
+<% end -%>
+<% if @email_from -%>
+    <email_from><%= @email_from %></email_from>
+<% end -%>
+<% if @email_maxperhour -%>
+    <email_maxperhour><%= @email_maxperhour %></email_maxperhour>
+<% end -%>
+<% if @smtp_server -%>
+    <smtp_server><%= @smtp_server %></smtp_server>
+<% end -%>
+<% if @stats -%>
+    <stats><%= @stats %></stats>
+<% end -%>
+<% if @logall -%>
+    <logall><%= @logall %></logall>
+<% end -%>
+<% if @memory_size -%>
+    <memory_size><%= @memory_size %></memory_size>
+<% end -%>
+<% if @white_list -%>
+<% if @white_list.is_a?(Array) -%>
+<% @white_list.each do |ii| -%>
+    <white_list><%= ii %></white_list>
+<% end -%>
+<% else %>
+    <white_list><%= @white_list %></white_list>
+<% end -%>
+<% end -%>
+<% if @host_infomation -%>
+    <host_infomation><%= @host_infomation %></host_infomation>
+<% end -%>
+  </global>
+
