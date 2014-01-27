@@ -8,6 +8,12 @@ This module manages OSSEC server and client configuration through Puppet
 
 * Puppet `storeconfigs` must be enabled.
 
+* Set client_seed in params.pp
+
+This should be a randomly generated string of characters, and params.pp should
+have permissions set such that only the `puppet` user and read/write the file.
+One could use `openssl rand -base64 12` to generate the client_seed.
+
 ## Setup
 
 To install ossec as a server or client:
