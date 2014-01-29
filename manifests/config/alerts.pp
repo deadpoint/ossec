@@ -18,7 +18,7 @@ class ossec::config::alerts (
         "Invalid log_alert_level, [$log_alert_level] must be 1-16")
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_alerts":
         target  => "$content",

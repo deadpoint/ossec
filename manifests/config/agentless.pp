@@ -12,7 +12,7 @@ class ossec::config::agentless (
        fail( "ossec::config::agentless is for setting ossec server options only" )
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_agentless":
         target  => "$content",

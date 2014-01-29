@@ -26,7 +26,7 @@ class ossec::config::rootcheck (
 
     include ossec::config
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_rootcheck":
         target  => "$content",

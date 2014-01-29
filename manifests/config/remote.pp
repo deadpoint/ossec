@@ -14,7 +14,7 @@ class ossec::config::remote (
        fail( "ossec::config::remote is for setting ossec server options only" )
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_remote":
         target  => "$content",

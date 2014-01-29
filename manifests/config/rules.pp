@@ -8,7 +8,7 @@ define ossec::config::rules (
        fail( "ossec::config::rules is for setting ossec server options only" )
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_rules_${name}":
         target  => "$content",

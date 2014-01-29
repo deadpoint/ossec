@@ -16,7 +16,7 @@ class ossec::config::database (
     validate_re($db_type, '^(mysql|postgresql)$',
         "Invalid db_type, [$db_type] must be either mysql or postgresql")
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_database":
         target  => "$content",

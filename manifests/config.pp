@@ -9,7 +9,7 @@ class ossec::config (
     validate_re($install_type, '^(client|server)$',
         "Invalid install_type, [$install_type] must be client or server")
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat { "$content":
         owner       => 'root',

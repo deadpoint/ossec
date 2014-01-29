@@ -9,15 +9,15 @@ class ossec::params {
     $server_package_name    = 'ossec-hids-server'
     $user                   = 'ossec'
     $group                  = 'ossec'
-    $ossec_dir              = '/var/ossec'
+    $ossec_dir              = '/var/lib/ossec'
     $conf_dir               = "${ossec_dir}/etc"
-    $conf_file              = "ossec.conf"
+    $conf_file              = "${conf_dir}/ossec.conf"
     $client_keys            = "$conf_dir/client.keys"
     $source                 = ''
     $source_dir             = ''
     $source_dir_purge       = false
     $template               = ''
-    $client_seed            = 'BbmV4LNOnyW7'
+    $client_seed            = ''
     $enable_db              = false
     # http://www.ossec.net/doc/syntax/head_ossec_config.client.html
     $server_ip              = undef

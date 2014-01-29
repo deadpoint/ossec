@@ -10,7 +10,7 @@ define ossec::config::localfile (
     validate_re($log_format, '^(syslog|snort-full|snort-fast|squid|iis|eventlog|mysql_log|postgresql_log|nmapg|apache|command|full_command|djb-multilog|multi-line)$',
         "Invalid log_format, [$log_format] must be one of: syslog,snort-full,snort-fast,squid,iis,eventlog,mysql_log,postgresql_log,nmapg,apache,command,full_command,djb-multilog,multi-line")
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_localfile_${name}":
         target  => "$content",

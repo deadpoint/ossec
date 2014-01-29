@@ -3,10 +3,14 @@ define ossec::clientkey (
     $client_id,
     $client_name,
     $client_ip,
-    $client_seed    = "BbmV4LNOnyW7"
+    $client_seed    = $ossec::params::client_seed
     ) {
 
     include amanda::params
+
+    if ! $client_seed {
+        fail("Ossec::Clientkey parameter client_seed is not set!")
+    }
 
     $key1 = md5("${client_id} ${client_seed}")
     $key2 = md5("${client_name} ${client_ip} ${client_seed}")

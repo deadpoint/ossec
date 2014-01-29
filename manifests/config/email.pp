@@ -17,7 +17,7 @@ define ossec::config::email (
         "Invalid format, [$format] must be full or sms")
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_email_${name}":
         target  => "$content",

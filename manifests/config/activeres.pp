@@ -18,7 +18,7 @@ define ossec::config::activeres (
     validate_re($location, '^(local|server|defined-agent|all)$',
         "Invalid location, [$location] must be on of local, server, defined-agent, or all")
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_activeres_${name}":
         target  => "$content",

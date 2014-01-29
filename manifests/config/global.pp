@@ -18,7 +18,7 @@ class ossec::config::global (
        fail( "ossec::config::global is for setting ossec server options only" )
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_global":
         target  => "$content",

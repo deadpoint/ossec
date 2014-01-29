@@ -22,7 +22,7 @@ class ossec::config::syslog (
         "Invalid level, [$level] must be 1-16")
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_syslog":
         target  => "$content",

@@ -16,7 +16,7 @@ class ossec::config::client (
         fail("Either server_ip or server_hostname must be set")
     }
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_client":
         target  => "$content",

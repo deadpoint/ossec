@@ -18,7 +18,7 @@ class ossec::config::syscheck (
     #validate_re($scan_day, '^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)$',
     #    "Invalude scan_day, [$scan_day] must be sunday,monday,tuesday, etc")
 
-    $content = "${ossec::params::conf_dir}/temp.conf"
+    $content = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_syscheck":
         target  => "$content",
