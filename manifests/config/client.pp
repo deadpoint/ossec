@@ -20,7 +20,7 @@ class ossec::config::client (
 
     concat::fragment { "ossec_client":
         target  => "$content",
-        order   => '40',
+        order   => '05',
         content => template("ossec/client-options.erb"),
     }
 }

@@ -12,13 +12,17 @@ class ossec::params {
     $ossec_dir              = '/var/lib/ossec'
     $conf_dir               = "${ossec_dir}/etc"
     $conf_file              = "${conf_dir}/ossec.conf"
-    $client_keys            = "$conf_dir/client.keys"
+    $client_keys            = "${conf_dir}/client.keys"
     $source                 = ''
     $source_dir             = ''
     $source_dir_purge       = false
     $template               = ''
     $client_seed            = ''
     $enable_db              = false
+    $enable_debug           = false
+    $enable_agentless       = false
+    $enable_csyslog         = false
+    $plist_file             = "${ossec_dir}/bin/.process_list"
     # http://www.ossec.net/doc/syntax/head_ossec_config.client.html
     $server_ip              = undef
     $server_hostname        = undef

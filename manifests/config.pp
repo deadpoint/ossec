@@ -26,19 +26,19 @@ class ossec::config (
     }
     concat::fragment { "ossec_footer":
         target  => "$content",
-        order   => '99',
+        order   => '9999',
         content => template("ossec/config-footer.erb"), 
     }
     # only servers get these
     if $install_type == "server" {
         concat::fragment { "ossec_rules_begin":
             target  => "$content",
-            order   => '20',
+            order   => '2000',
             content => template("ossec/rules-begin.erb"),
         }
         concat::fragment { "ossec_rules_end":
             target  => "$content",
-            order   => '25',
+            order   => '2999',
             content => template("ossec/rules-end.erb"),
         }
     }

@@ -26,33 +26,5 @@
 <% if @refilter_cmd -%>
     <srefilter_cmd><%= @refilter_cmd %></refilter_cmd>
 <% end -%>
-
-    <ignore>/etc/mtab</ignore>
-    <ignore>/etc/hosts.deny</ignore>
-    <ignore>/etc/mail/statistics</ignore>
-    <ignore>/etc/random-seed</ignore>
-    <ignore>/etc/adjtime</ignore>
-<% if @ignore -%>
-<% if @ignore.is_a?(Array) -%>
-<% @ignore.each do |ii| -%>
-    <ignore><%= ii %></ignore>
-<% end -%>
-<% else %>
-    <ignore><%= @ignore %></ignore>
-<% end -%>
-<% end -%>
-
-    <directories check_all="yes">/etc,/usr/bin,/usr/sbin</directories>
-    <directories check_all="yes">/bin,/sbin</directories>
-<% if @directories -%>
-<% if @directories.is_a?(Array) -%>
-<% @directories.each do |ii| -%>
-    <directories check_all="yes"><%= ii %></directories>
-<% end -%>
-<% else %>
-    <directories check_all="yes"><%= @directories %></directories>
-<% end -%>
-<% end -%>
-
   </syscheck>
 

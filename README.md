@@ -6,13 +6,19 @@ This module manages OSSEC server and client configuration through Puppet
 
 ## Requirements
 
-* Puppet `storeconfigs` must be enabled.
+##### Puppet `storeconfigs` must be enabled.
 
-* Set client_seed in params.pp
+##### Set `client_seed` in params.pp
 
 This should be a randomly generated string of characters, and params.pp should
 have permissions set such that only the `puppet` user and read/write the file.
 One could use `openssl rand -base64 12` to generate the client_seed.
+
+##### Set `ossec_dir` in params.pp
+
+This is the base directory of your OSSEC installation. The default location for this
+puppet module is `/var/lib/ossec` and likely needs to be modified as by default OSSEC
+installs into `/var/ossec`.
 
 ## Setup
 
@@ -53,57 +59,86 @@ Configuration types below, but at a minimum you'll want to define the
 
 ```
 class { "ossec::config::global":
-    email_to    => 'ossec@domain.com',
-    smtp_server => 'smtp.domain.com',
+    email_to    => 'ossec@ossec.org',
+    smtp_server => 'smtp.ossec.org',
     }
 ```
 
 #### Configuration types
+
+##### `ossec::server`
+Install and configure OSSEC server. The following parameters are available:
+`enable_db` = true|false
+`enable_debug` = true|false
+`enable_agentless` = true|false
+`enable_csyslog` = true|false
+
+##### `ossec::client`
+Install and configure OSSEC client/agents
  
-* ossec::config::activeres 
-  Puppet type: defined type
+##### ossec::config::activeres 
+ Puppet type: defined type
 
-* ossec::config::agentless 
-  Puppet type: class
+##### ossec::config::agentless 
+Configure agentless options
 
-* ossec::config::alerts 
-  Puppet type: class
+##### ossec::config::alerts 
+Configure alerts
 
-* ossec::config::client 
-  Puppet type: class
+##### ossec::config::client 
+Configure the client
 
-* ossec::config::command 
-  Puppet Type: defined type
+##### ossec::config::command 
+Configure commands
 
-* ossec::config::database 
-  Puppet Type: class
+##### ossec::config::database 
+Configure database type and options
 
-* ossec::config::email
-  Puppet Type: defined type
+##### ossec::config::email
+Configure email options
 
-* ossec::config::global 
-  Puppet Type: class
+##### ossec::config::global 
+Configure global server options
 
-* ossec::config::localfile 
-  Puppet Type: defined type
+    class { "ossec::config::global": email_to => "systems@ossec.org" }
 
-* ossec::config::remote 
-  Puppet Type: class
+##### ossec::config::localfile 
+Configure local files to monitor
 
-* ossec::config::reports 
-  Puppet Type: class
+    ossec::config::localfile { "/var/log/messages": }
 
-* ossec::config::rootcheck
-  Puppet Type: class
+##### ossec::config::remote 
+Configure remote options
 
-* ossec::config::rules 
-  Puppet Type: defined type
+##### ossec::config::reports 
+Configure reports
 
-* ossec::config::syscheck 
-  Puppet Type: class
+##### ossec::config::rootcheck
+Configure rootcheck options
 
-* ossec::config::syslog 
-  Puppet Type: class
+##### ossec::config::rules 
+Configure rules, `order` is required.
+
+    ossec::config::rules { "pam_rules.xml": order => '2' }
+
+##### ossec::config::syscheck 
+Configure syscheck options
+
+    class { "ossec::config::syscheck": alert_new_files => 'yes' }
+
+##### ossec::config::syscheck::dir
+Configure syscheck directories to monitor
+
+    ossec::config::syscheck::dir { "/etc": report_changes => 'yes' }
+    ossec::config::syscheck::dir { "/bin": }
+
+##### ossec::config::syscheck::ignore
+Configure syscheck directories and files to ignore
+
+    ossec::config::syscheck::ignore { "/etc/mtab": }
+
+##### ossec::config::syslog 
+Configure syslog options
 
 
 

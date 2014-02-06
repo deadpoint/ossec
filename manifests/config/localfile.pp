@@ -1,7 +1,7 @@
 #
 define ossec::config::localfile (
-    $frequency        	= $ossec::params::frequency,
-    $log_format 	= $ossec::params::log_format,
+    $frequency          = $ossec::params::frequency,
+    $log_format         = $ossec::params::log_format,
     $command           	= $ossec::params::command,
     $ossec_alias        = $ossec::params::ossec_alias,
     $check_diff         = $ossec::params::check_diff
