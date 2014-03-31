@@ -12,17 +12,16 @@ class ossec::config::reports (
     $showlogs
     ) inherits ossec::params {
 
-    include ossec::config
-
     if $ossec::config::install_type == "client" {
-       fail( "ossec::config::reports is for setting ossec server options only" )
+      fail( "ossec::config::reports is for setting ossec server options only" )
     }
 
-    $content = "${ossec::params::conf_file}"
+    $conf_file = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_reports":
-        target  => "$content",
-        order   => '45',
-        content => template("ossec/reports-options.erb"),
+      ensure  => 'present',
+      target  => "$conf_file",
+      order   => '45',
+      content => template("ossec/reports-options.erb"),
     }
 }

@@ -8,17 +8,16 @@ class ossec::config::remote (
     $local_ips      = $ossec::params::local_ips
     ) inherits ossec::params {
 
-    include ossec::config
-
     if $ossec::config::install_type == "client" {
-       fail( "ossec::config::remote is for setting ossec server options only" )
+      fail( "ossec::config::remote is for setting ossec server options only" )
     }
 
-    $content = "${ossec::params::conf_file}"
+    $conf_file = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_remote":
-        target  => "$content",
-        order   => '30',
-        content => template("ossec/remote-options.erb"),
+      ensure  => 'present',
+      target  => "$conf_file",
+      order   => '30',
+      content => template("ossec/remote-options.erb"),
     }
 }

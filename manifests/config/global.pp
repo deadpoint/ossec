@@ -5,24 +5,23 @@ class ossec::config::global (
     $email_from             = $ossec::params::email_from,
     $email_maxperhour       = $ossec::params::email_maxperhour,
     $smtp_server            = $ossec::params::smtp_server,
-    $status                 = $ossec::params::status,
+    $stats                 = $ossec::params::status,
     $logall                 = $ossec::params::logall,
     $memory_size            = $ossec::params::memory_size,
     $white_list             = $ossec::params::white_list,
-    $host_infomation        = $ossec::params::host_infomation,
+    $host_information        = $ossec::params::host_information,
     ) inherits ossec::params {
 
-    #include ossec::config
-
     if $ossec::config::install_type == "client" {
-       fail( "ossec::config::global is for setting ossec server options only" )
+      fail( "ossec::config::global is for setting ossec server options only" )
     }
 
-    $content = "${ossec::params::conf_file}"
+    $conf_file = "${ossec::params::conf_file}"
 
     concat::fragment { "ossec_global":
-        target  => "$content",
-        order   => '05',
-        content => template("ossec/global-options.erb"),
+      ensure  => 'present',
+      target  => "$conf_file",
+      order   => '05',
+      content => template("ossec/global-options.erb"),
     }
 }

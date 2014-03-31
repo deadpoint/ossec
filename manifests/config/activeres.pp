@@ -1,7 +1,7 @@
 #
 define ossec::config::activeres (
-    $disabled           = undef
-    $command           	= undef,
+    $disabled           = undef,
+    $command            = undef,
     $location           = undef,
     $agent_id           = undef,
     $level              = undef,
@@ -12,16 +12,15 @@ define ossec::config::activeres (
     ) {
 
     if $ossec::config::install_type == "client" {
-       fail( "ossec::config::activeres is for setting ossec server options only" )
+      fail( "ossec::config::activeres is for setting ossec server options only" )
     }
 
     validate_re($location, '^(local|server|defined-agent|all)$',
-        "Invalid location, [$location] must be on of local, server, defined-agent, or all")
-
-    $content = "${ossec::params::conf_file}"
+        "Invalid location, [$location], must be one of the following values: local, server, defined-agent, or all")
 
     concat::fragment { "ossec_activeres_${name}":
-        target  => "$content",
+        ensure  => present,
+        target  => "${ossec::params::conf_file}",
         order   => '55',
         content => template("ossec/activeres-options.erb"),
     }

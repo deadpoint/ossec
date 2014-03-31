@@ -9,7 +9,7 @@ class ossec::params {
     $server_package_name    = 'ossec-hids-server'
     $user                   = 'ossec'
     $group                  = 'ossec'
-    $ossec_dir              = '/var/lib/ossec'
+    $ossec_dir              = '/var/ossec'
     $conf_dir               = "${ossec_dir}/etc"
     $conf_file              = "${conf_dir}/ossec.conf"
     $client_keys            = "${conf_dir}/client.keys"
@@ -17,30 +17,30 @@ class ossec::params {
     $source_dir             = ''
     $source_dir_purge       = false
     $template               = ''
-    $client_seed            = ''
+    $client_seed            = 'YlusJIC4UBSaIIvu'
     $enable_db              = false
     $enable_debug           = false
     $enable_agentless       = false
     $enable_csyslog         = false
     $plist_file             = "${ossec_dir}/bin/.process_list"
     # http://www.ossec.net/doc/syntax/head_ossec_config.client.html
-    $server_ip              = undef
+    $server_ip              = '192.168.50.10'
     $server_hostname        = undef
     $server_port            = undef
     $notify_time            = undef
     # http://www.ossec.net/doc/syntax/head_ossec_config.global.html
     $email_notification     = "yes"
-    $email_to               = undef
-    $email_from             = undef
+    $email_to               = 'devops@acme.com'
+    $email_from             = 'devops@acme.com'
     $email_maxperhour       = undef
-    $smtp_server            = undef
+    $smtp_server            = '192.168.50.10'
     $status                 = undef
     $logall                 = undef
     $memory_size            = undef
-    $white_list             = undef
-    $host_infomation        = undef
+    $white_list             = [ '127.0.0.1', '192.168.50.10' ]
+    $host_information        = undef
     # http://www.ossec.net/doc/syntax/head_ossec_config.active-response.html
-    $active_response        = false
+    $active_response        = true
     # http://www.ossec.net/doc/syntax/head_ossec_config.syscheck.html
     $frequency              = 21600
     $directories            = undef
@@ -52,7 +52,7 @@ class ossec::params {
     $scan_on_start          = undef
     $windows_registry       = undef
     $registry_ignore        = undef
-    $refilter_cmd           = undef
+    $prefilter_cmd          = undef
     # http://www.ossec.net/doc/syntax/head_ossec_config.localfile.html
     $location               = undef
     $log_format             = "syslog"

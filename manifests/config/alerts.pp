@@ -5,10 +5,8 @@ class ossec::config::alerts (
     $use_geoip         = undef
     ) inherits ossec::params {
 
-    include ossec::config
-
     if $ossec::config::install_type == "client" {
-       fail( "ossec::config::alerts is for setting ossec server options only" )
+      fail( "ossec::config::alerts is for setting ossec server options only" )
     }
 
     if $email_alert_level { validate_re($email_alert_level, '^(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)$',

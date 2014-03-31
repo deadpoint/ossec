@@ -8,10 +8,13 @@
         <server-hostname><%= @server_hostname %></server-hostname>
 <% end -%>
 <% if @server_port -%>
-        <server-port><%= @server_port %></server-port>
+        <port><%= @server_port %></port>
 <% end -%>
 <% if @notify_time -%>
         <notify-time><%= @notify_time %></notify-time>
+<% end -%>
+<% if @time_reconnect -%>
+        <time-reconnect><%= @time_reconnect %></time-reconnect>
 <% end -%>
     </client>
 </ossec_config>

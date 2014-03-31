@@ -3,11 +3,15 @@ class ossec::server (
     $enable_debug     = $ossec::params::enable_debug,
     $enable_agentless = $ossec::params::enable_agentless,
     $enable_csyslog   = $ossec::params::enable_csyslog
-    ) {
+    ) inherits ossec::params {
 
     include concat::setup
+
     class { "ossec::service": }
     class { "ossec::config": install_type => "server" }
+
+    include ossec::config::remote
+    include ossec::config::global
 
     #
     package { 'ossec':
@@ -16,7 +20,7 @@ class ossec::server (
     }
     #
     file { 'pfile':
-        name    => $ossec::params::plist_file,
+        path    => $ossec::params::plist_file,
         ensure  => file,
         owner   => $ossec::params::user,
         group   => $ossec::params::group,

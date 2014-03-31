@@ -12,7 +12,6 @@ define ossec::config::syscheck::dir (
     $check_perm         = undef,
     $restrict           = undef
     ) {
-
     #validate_re($realtime, '^(yes|no)', "Invalid $realtime, [$realtime] must be yes or no")
     #validate_re($report_changes, '^(yes|no)', "Invalid $report_changes, [$report_changes] must be yes or no")
     #validate_re($check_all, '^(yes|no)', "Invalid $check_all, [$check_all] must be yes or no")
@@ -25,11 +24,12 @@ define ossec::config::syscheck::dir (
     #validate_re($check_perm, '^(yes|no)', "Invalid $check_perm, [$check_perm] must be yes or no")
     #validate_re($restrict, '^(yes|no)', "Invalid $restrict, [$restrict] must be yes or no")
 
-    $content = "${ossec::params::conf_file}"
+    $conf_file = "${ossec::params::conf_file}"
 
     concat::fragment { "syscheck_dir_${name}":
-        target  => "$content",
-        order   => '13',
-        content => template("ossec/syscheck-dir.erb"),
+      ensure  => 'present',
+      target  => "$conf_file",
+      order   => '13',
+      content => template("ossec/syscheck-dir.erb"),
     }
 }
