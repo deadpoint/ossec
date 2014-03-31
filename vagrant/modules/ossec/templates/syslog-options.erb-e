@@ -1,0 +1,24 @@
+  <syslog_output>
+<% if @server -%>
+    <server><%= @server %></server>
+<% end -%>
+<% if @port -%>
+    <port><%= @port %></port>
+<% end -%>
+<% if @level -%>
+    <level><%= @level %></level>
+<% end -%>
+<% if @group -%>
+    <group><%= @group %></group>
+<% end -%>
+<% if @rule_id -%>
+    <rule_id><%= @rule_id %></rule_id>
+<% end -%>
+<% if @location -%>
+    <location><%= @location %></location>
+<% end -%>
+<% if @format -%>
+    <format><%= @format %></format>
+<% end -%>
+  </syslog_output>
+

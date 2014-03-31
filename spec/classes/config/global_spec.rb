@@ -1,0 +1,40 @@
+require 'spec_helper'
+
+describe 'ossec::config::global' do
+
+  let :pre_condition do
+    'include ossec::params'
+  end
+
+  let (:title) { 'global' }
+
+  let (:params) { { :email_notification => 'yes', :email_to => 'foo@acme.com', :email_from => 'devops@acme.com', :email_maxperhour => '100', :smtp_server => '10.10.10.10', :stats => '8', :logall => 'yes', :memory_size => '1024', :white_list => '[ "127.0.0.1", "10.10.10.10" ]', :host_information => '8', :name => "#{title}" } }
+
+  let (:ossec_params_conf_file) { '/var/ossec/etc/ossec.conf' }
+
+  context 'install_type set to client' do
+    let :facts do {
+      :concat_basedir => '/foo'
+    }
+    end
+
+    let :pre_condition do
+      'include ossec::client'
+    end
+
+    it 'should complain if $ossec::config::install_type is set to client' do
+      expect{ should compile }.to raise_error(Puppet::Error, /ossec::config::global is for setting ossec server options only/)
+    end
+  end
+
+  it 'should contain a concat::fragment for setting the global options' do
+    should contain_concat__fragment("ossec_global").with({
+      'ensure'  => 'present',
+      'target'  => "#{ossec_params_conf_file}",
+      'order'   => '05',
+      'content' => "  <global>\n    <email_notification>#{params[:email_notification]}</email_notification>\n    <email_to>#{params[:email_to]}</email_to>\n    <email_from>#{params[:email_from]}</email_from>\n    <email_maxperhour>#{params[:email_maxperhour]}</email_maxperhour>\n    <smtp_server>#{params[:smtp_server]}</smtp_server>\n    <stats>#{params[:stats]}</stats>\n    <logall>#{params[:logall]}</logall>\n    <memory_size>#{params[:memory_size]}</memory_size>\n\n    <white_list>#{params[:white_list]}</white_list>\n    <host_information>#{params[:host_information]}</host_information>\n  </global>\n\n",
+  })
+
+  end
+end
+

@@ -1,0 +1,12 @@
+  <alerts>
+<% if @email_alert_level -%>
+    <email_alert_level><%= @email_alert_level %></email_alert_level>
+<% end -%>
+<% if @log_alert_level -%>
+    <log_alert_level><%= @log_alert_level %></log_alert_level>
+<% end -%>
+<% if @use_geoip -%>
+    <use_geoip><%= @use_geoip %></use_geoip>
+<% end -%>
+  </alerts>
+

@@ -1,0 +1,15 @@
+  <command>
+<% if @name -%>
+    <name><%= @name %></name>
+<% end -%>
+<% if @executable -%>
+    <executable><%= @executable %></executable>
+<% end -%>
+<% if @expect -%>
+    <expect><%= @expect %></expect>
+<% end -%>
+<% if @timeout_allowed -%>
+    <timeout_allowed><%= @timeout_allowed %></timeout_allowed>
+<% end -%>
+  </command>
+

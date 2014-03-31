@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite tests="70" failures="0" errors="0" time="9.116531" timestamp="2014-03-25T15:43:54-06:00">
+  <properties/>
+  <testcase classname="spec.classes.client_spec" name="ossec::client should contain concat::setup" time="1.719165"/>
+  <testcase classname="spec.classes.client_spec" name="ossec::client should contain ossec::service" time="0.002327"/>
+  <testcase classname="spec.classes.client_spec" name="ossec::client should contain ossec::service with install_type set to client" time="0.002640"/>
+  <testcase classname="spec.classes.client_spec" name="ossec::client should contain ossec::config::client" time="0.002726"/>
+  <testcase classname="spec.classes.client_spec" name="ossec::client should contain the package ossec" time="0.002228"/>
+  <testcase classname="spec.classes.client_spec" name="ossec::client should set client_keys" time="0.006974"/>
+  <testcase classname="spec.classes.client_spec" name="ossec::client should set the key on the client" time="0.005516"/>
+  <testcase classname="spec.classes.config.agentless_spec" name="ossec::config::agentless should contain a concat::fragment for setting the agentless options" time="0.214768"/>
+  <testcase classname="spec.classes.config.agentless_spec" name="ossec::config::agentless install_type set to client should complain if $ossec::config::install_type is set to client" time="0.303619"/>
+  <testcase classname="spec.classes.config.alerts_spec" name="ossec::config::alerts should contain a concat::fragment for setting the alerts options" time="0.192935"/>
+  <testcase classname="spec.classes.config.alerts_spec" name="ossec::config::alerts install_type set to client should complain if $ossec::config::install_type is set to client" time="0.269514"/>
+  <testcase classname="spec.classes.config.alerts_spec" name="ossec::config::alerts email alert level  not set properly should complain about email alert level being set incorrectly" time="0.073965"/>
+  <testcase classname="spec.classes.config.alerts_spec" name="ossec::config::alerts log alert level  not set properly should complain about log alert level being set incorrectly" time="0.073154"/>
+  <testcase classname="spec.classes.config.client_spec" name="ossec::config::client should contain a concat::fragment for setting the client options" time="0.133113"/>
+  <testcase classname="spec.classes.config.client_spec" name="ossec::config::client install_type set to server should complain if $ossec::config::install_type is set to server" time="0.389454"/>
+  <testcase classname="spec.classes.config.client_spec" name="ossec::config::client either server_ip or server_hostname must be defined should complain if the server_ip and the server hostname are missing" time="0.058428"/>
+  <testcase classname="spec.classes.config.database_spec" name="ossec::config::database should contain a concat::fragment for setting the database options" time="0.142524"/>
+  <testcase classname="spec.classes.config.database_spec" name="ossec::config::database install_type set to client should complain if $ossec::config::install_type is set to client" time="0.244337"/>
+  <testcase classname="spec.classes.config.database_spec" name="ossec::config::database DB type not set properly should complain about DB type being set incorrectly" time="0.078212"/>
+  <testcase classname="spec.classes.config.global_spec" name="ossec::config::global should contain a concat::fragment for setting the global options" time="0.140231"/>
+  <testcase classname="spec.classes.config.global_spec" name="ossec::config::global install_type set to client should complain if $ossec::config::install_type is set to client" time="0.257278"/>
+  <testcase classname="spec.classes.config.remote_spec" name="ossec::config::remote should contain a concat::fragment for setting the agentless options" time="0.136708"/>
+  <testcase classname="spec.classes.config.remote_spec" name="ossec::config::remote install_type set to client should complain if $ossec::config::install_type is set to client" time="0.249205"/>
+  <testcase classname="spec.classes.config.reports_spec" name="ossec::config::reports should contain a concat::fragment for setting the agentless options" time="0.158013"/>
+  <testcase classname="spec.classes.config.reports_spec" name="ossec::config::reports install_type set to client should complain if $ossec::config::install_type is set to client" time="0.236515"/>
+  <testcase classname="spec.classes.config.rootcheck_spec" name="ossec::config::rootcheck should contain a concat::fragment for setting the agentless options" time="0.165777"/>
+  <testcase classname="spec.classes.config.syscheck_spec" name="ossec::config::syscheck should contain a concat::fragment for setting the syscheck options" time="0.140516"/>
+  <testcase classname="spec.classes.config.syscheck_spec" name="ossec::config::syscheck scan day not set properly should complain about scan day being set incorrectly" time="0.075102"/>
+  <testcase classname="spec.classes.config.syslog_spec" name="ossec::config::syslog should contain a concat::fragment for setting the syslog options" time="0.144154"/>
+  <testcase classname="spec.classes.config.syslog_spec" name="ossec::config::syslog install_type set to client should complain if $ossec::config::install_type is set to client" time="0.275921"/>
+  <testcase classname="spec.classes.config.syslog_spec" name="ossec::config::syslog format  not set properly should complain about format being set incorrectly" time="0.081692"/>
+  <testcase classname="spec.classes.config.syslog_spec" name="ossec::config::syslog level  not set properly should complain about level being set incorrectly" time="0.095714"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config should contain concat::setup" time="0.192658"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config should contain a yumrepo for the atomic repo" time="0.003131"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config should manage a file resource for the atomic gpg key" time="0.004200"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config should contain an exec to import the gpg key" time="0.002574"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config should contain a concat to manage the configuration file" time="0.008017"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config should contain a concat fragment for adding the ossec config file header" time="0.006384"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config should contain a concat fragment for adding the ossec config file footer" time="0.006026"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config install type not set properly should complain if $ossec::config::install_type is not set to client or server" time="0.149548"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config install type set to server should contain a concat::fragment for the rules beginning" time="0.168397"/>
+  <testcase classname="spec.classes.config_spec" name="ossec::config install type set to server should contain a concat::fragment for the rules end" time="0.004363"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should contain concat::setup" time="0.339668"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should contain ossec::service" time="0.001638"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should contain ossec::config with install_type set to server" time="0.001420"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should contain ossec::config::remote" time="0.001401"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should contain ossec::config::global" time="0.001400"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should have the ossec server package installed" time="0.001149"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should manage the plist_file" time="0.001223"/>
+  <testcase classname="spec.classes.server_spec" name="ossec::server should contain a concat for managing the client keys" time="0.006367"/>
+  <testcase classname="spec.classes.service_spec" name="ossec::service should include the class ossec::params" time="0.097538"/>
+  <testcase classname="spec.classes.service_spec" name="ossec::service should define the ossec service" time="0.002296"/>
+  <testcase classname="spec.defines.clientkey_spec" name="ossec::clientkey should include the params class" time="0.123889"/>
+  <testcase classname="spec.defines.clientkey_spec" name="ossec::clientkey should define a client key resource that appends to an existing file" time="0.007019"/>
+  <testcase classname="spec.defines.clientkey_spec" name="ossec::clientkey missing client_seed should fail if the client_seed parameter is not set" time="0.048610"/>
+  <testcase classname="spec.defines.config.activeres_spec" name="ossec::config::activeres should contain a concat::fragment for setting the activeres options" time="0.138973"/>
+  <testcase classname="spec.defines.config.activeres_spec" name="ossec::config::activeres install_type set to client should complain if $ossec::config::install_type is set to client" time="0.268192"/>
+  <testcase classname="spec.defines.config.activeres_spec" name="ossec::config::activeres location not set properly should complain about location being set incorrectly" time="0.053880"/>
+  <testcase classname="spec.defines.config.command_spec" name="ossec::config::command should contain a concat::fragment for setting the activeres options" time="0.130760"/>
+  <testcase classname="spec.defines.config.command_spec" name="ossec::config::command timeout_allowed not set properly should complain about timeout_allowed being set incorrectly" time="0.044687"/>
+  <testcase classname="spec.defines.config.email_spec" name="ossec::config::email should contain a concat::fragment for setting the email options" time="0.099651"/>
+  <testcase classname="spec.defines.config.email_spec" name="ossec::config::email install_type set to client should complain if $ossec::config::install_type is set to client" time="0.233141"/>
+  <testcase classname="spec.defines.config.email_spec" name="ossec::config::email if format exists it should be set to full or sms should complain about format being set incorrectly" time="0.091315"/>
+  <testcase classname="spec.defines.config.localfile_spec" name="ossec::config::localfile should contain a concat::fragment for setting the activeres options" time="0.099575"/>
+  <testcase classname="spec.defines.config.localfile_spec" name="ossec::config::localfile log_format not set properly should complain about log_format being set incorrectly" time="0.077181"/>
+  <testcase classname="spec.defines.config.rules_spec" name="ossec::config::rules should contain a concat::fragment for setting the rules" time="0.102759"/>
+  <testcase classname="spec.defines.config.rules_spec" name="ossec::config::rules name set to rules_config.xml should not allow you to add rules_config.xml as that is added by default" time="0.047597"/>
+  <testcase classname="spec.defines.config.rules_spec" name="ossec::config::rules install_type set to client should complain if $ossec::config::install_type is set to client" time="0.228822"/>
+  <testcase classname="spec.defines.config.syscheck.dir_spec" name="ossec::config::syscheck::dir should contain a concat::fragment for setting the syscheck dir options" time="0.133550"/>
+  <testcase classname="spec.defines.config.syscheck.ignore_spec" name="ossec::config::syscheck::ignore should contain a concat::fragment for setting the syscheck ignore options" time="0.100946"/>
+</testsuite>

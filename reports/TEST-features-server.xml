@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="Validate Server Installation" skipped="0" tests="1" time="60.877265">
+<testcase classname="Validate Server Installation" name="Instance is active, ossec server is installed and running" time="60.877265">
+  <system-out/>
+  <system-err/>
+</testcase>
+  <system-out>
+    <![CDATA[]]>
+  </system-out>
+  <system-err>
+    <![CDATA[]]>
+  </system-err>
+</testsuite>

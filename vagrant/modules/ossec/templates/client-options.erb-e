@@ -1,0 +1,14 @@
+    <client>
+<% if @server_ip -%>
+        <server-ip><%= @server_ip %></server-ip>
+<% end -%>
+<% if @server_hostname -%>
+        <server-hostname><%= @server_hostname %></server-hostname>
+<% end -%>
+<% if @server_port -%>
+        <server-port><%= @server_port %></server-port>
+<% end -%>
+<% if @notify_time -%>
+        <notify-time><%= @notify_time %></notify-time>
+<% end -%>
+    </client>

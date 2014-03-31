@@ -1,0 +1,18 @@
+  <database_output>
+<% if @db_hostname -%>
+    <hostname><%= @db_hostname %></hostname>
+<% end -%>
+<% if @db_user -%>
+    <user><%= @db_user %></user>
+<% end -%>
+<% if @db_password -%>
+    <password><%= @db_password %></password>
+<% end -%>
+<% if @database -%>
+    <database><%= @database %></database>
+<% end -%>
+<% if @db_type -%>
+    <type><%= @db_type %><type>
+<% end -%>
+  </database_output>
+

@@ -1,0 +1,6 @@
+# config/cucumber.yml
+##YAML Template
+---
+default: --profile html_report --format pretty --format junit --out reports
+html_report: --format progress --format html --out=reports/cucumber.html  
+bvt: --tags @bvt`
