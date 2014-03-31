@@ -1,0 +1,30 @@
+  <syscheck>
+<% if @frequency -%>
+    <frequency><%= @frequency %></frequency>
+<% end -%>
+<% if @scan_time -%>
+    <scan_time><%= @scan_time %></scan_time>
+<% end -%>
+<% if @scan_day -%>
+    <scan_day><%= @scan_day %></scan_day>
+<% end -%>
+<% if @auto_ignore -%>
+    <auto_ignore><%= @auto_ignore %></auto_ignore>
+<% end -%>
+<% if @alert_new_files -%>
+    <alert_new_files><%= @alert_new_files %></alert_new_files>
+<% end -%>
+<% if @scan_on_start -%>
+    <scan_on_start><%= @scan_on_start %></scan_on_start>
+<% end -%>
+<% if @windows_registry -%>
+    <windows_registry><%= @windows_registry %></windows_registry>
+<% end -%>
+<% if @registry_ignore -%>
+    <registry_ignore><%= @registry_ignore %></registry_ignore>
+<% end -%>
+<% if @prefilter_cmd -%>
+    <prefilter_cmd><%= @prefilter_cmd %></prefilter_cmd>
+<% end -%>
+  </syscheck>
+

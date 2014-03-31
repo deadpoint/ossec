@@ -1,0 +1,4 @@
+  <syscheck>
+    <ignore><%= @name %></ignore>
+  </syscheck>
+

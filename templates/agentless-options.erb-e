@@ -1,0 +1,15 @@
+  <agentless>
+<% if @frequency -%>
+    <frequency><%= @frequency %></frequency>
+<% end -%>
+<% if @host -%>
+    <host><%= @host %></host>
+<% end -%>
+<% if @state -%>
+    <state><%= @state %></state>
+<% end -%>
+<% if @arguments -%>
+    <arguments><%= @arguments %></arguments>
+<% end -%>
+  </agentless>
+

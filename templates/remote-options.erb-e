@@ -1,0 +1,39 @@
+  <remote>
+<% if @connection -%>
+    <connection><%= @connection %></connection>
+<% end -%>
+<% if @port -%>
+    <port><%= @port %></port>
+<% end -%>
+<% if @protocol -%>
+    <protocol><%= @protocol %></protocol>
+<% end -%>
+<% if @allowed_ips -%>
+<% if @allowed_ips.is_a?(Array) -%>
+<% @allowed_ips.each do |ii| -%>
+    <allowed-ips><%= ii %></allowed-ips>
+<% end -%>
+<% else %>
+    <allowed-ips><%= @allowed_ips %></allowed-ips>
+<% end -%>
+<% end -%>
+<% if @deny_ips -%>
+<% if @deny_ips.is_a?(Array) -%>
+<% @deny_ips.each do |ii| -%>
+    <deny-ips><%= ii %></deny-ips>
+<% end -%>
+<% else %>
+    <deny-ips><%= @deny_ips %></deny-ips>
+<% end -%>
+<% end -%>
+<% if @local_ips -%>
+<% if @local_ips.is_a?(Array) -%>
+<% @local_ips.each do |ii| -%>
+    <local-ips><%= ii %></local-ips>
+<% end -%>
+<% else %>
+    <local-ips><%= @local_ips %></local-ips>
+<% end -%>
+<% end -%>
+  </remote>
+

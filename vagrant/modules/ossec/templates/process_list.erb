@@ -1,0 +1,7 @@
+#
+# OSSEC Process list - Managed by Puppet!
+#
+DB_DAEMON="<% if @enable_db -%>ossec-dbd<% end -%>"
+CSYSLOG_DAEMON="<% if @enable_csyslog -%>ossec-csyslogd<% end -%>"
+AGENTLESS_DAEMON="<% if @enable_agentless -%>ossec-agentlessd<% end -%>"
+DEBUG_CLI="<% if @enable_debug -%>-d<% end -%>"

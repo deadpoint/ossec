@@ -1,0 +1,69 @@
+  <rootcheck>
+<% if @base_directory -%>
+    <base_directory><%= @base_directory %></base_directory>
+<% end -%>
+<% if @rootkit_files -%>
+    <rootkit_files><%= @rootkit_files %></rootkit_files>
+<% end -%>
+<% if @rootkit_trojans -%>
+    <rootkit_trojans><%= @rootkit_trojans %></rootkit_trojans>
+<% end -%>
+<% if @windows_audit -%>
+    <windows_audit><%= @windows_audit %></windows_audit>
+<% end -%>
+<% if @system_audit -%>
+    <system_audit><%= @system_audit %></system_audit>
+<% end -%>
+<% if @windows_apps -%>
+    <windows_apps><%= @windows_apps %></windows_apps>
+<% end -%>
+<% if @windows_malware -%>
+    <windows_malware><%= @windows_malware %></windows_malware>
+<% end -%>
+<% if @scanall -%>
+    <scanall><%= @scanall %></scanall>
+<% end -%>
+<% if @frequency -%>
+    <frequency><%= @frequency %></frequency>
+<% end -%>
+<% if @disabled -%>
+    <disabled><%= @disabled %></disabled>
+<% end -%>
+<% if @check_dev -%>
+    <check_dev><%= @check_dev %></check_dev>
+<% end -%>
+<% if @check_files -%>
+    <check_files><%= @check_files %></check_files>
+<% end -%>
+<% if @check_if -%>
+    <check_if><%= @check_if %></check_if>
+<% end -%>
+<% if @check_pids -%>
+    <check_pids><%= @check_pids %></check_pids>
+<% end -%>
+<% if @check_policy -%>
+    <check_policy><%= @check_policy %></check_policy>
+<% end -%>
+<% if @check_ports -%>
+    <check_ports><%= @check_ports %></check_ports>
+<% end -%>
+<% if @check_sys -%>
+    <check_sys><%= @check_sys %></check_sys>
+<% end -%>
+<% if @check_trojans -%>
+    <check_trojans><%= @check_trojans %></check_trojans>
+<% end -%>
+<% if @check_unixaudit -%>
+    <check_unixaudit><%= @check_unixaudit %></check_unixaudit>
+<% end -%>
+<% if @check_winapps -%>
+    <check_winapps><%= @check_winapps %></check_winapps>
+<% end -%>
+<% if @check_winaudit -%>
+    <check_winaudit><%= @check_winaudit %></check_winaudit>
+<% end -%>
+<% if @check_winmalware -%>
+    <check_winmalware><%= @check_winmalware %></check_winmalware>
+<% end -%>
+  </rootcheck>
+
