@@ -25,7 +25,7 @@ installs into `/var/ossec`.
 To install ossec as a server or client:
 ```
 node 'ossec' {
-    class { "ossec::server" }
+    class { "ossec::server": }
 }
 
 node 'client' {
